@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'pages',
     'accounts',
     'messaging',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Redirecciones de login/logout
 LOGIN_REDIRECT_URL = 'pages:home'
 LOGOUT_REDIRECT_URL = 'pages:home'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
