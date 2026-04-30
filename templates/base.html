@@ -47,7 +47,7 @@
             color: var(--accent-hover);
         }
 
-        /* Línea separadora sutil */
+        
         hr {
             border: 0;
             height: 1px;
@@ -59,7 +59,13 @@
 <body>
     <nav>
         <a href="{% url 'pages:home' %}">Home</a> |
-        <a href="{% url 'pages:about' %}">About</a>
+        <a href="{% url 'pages:about' %}">About</a> |
+        <a href="{% url 'pages:page_list' %}">Pages</a> |
+        <a href="{% url 'messaging:inbox' %}">Messages</a> |
+        <a href="{% url 'accounts:signup' %}">Signup</a> |
+        <a href="{% url 'accounts:login' %}">Login</a> |
+        <a href="{% url 'accounts:profile' %}">Profile</a> |
+        <a href="{% url 'accounts:logout' %}">Logout</a>>
     </nav>
 
     <hr>

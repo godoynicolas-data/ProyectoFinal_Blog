@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Enviados{% endblock %}
+
+{% block content %}
+<h1>Mensajes enviados</h1>
+
+<p><a href="{% url 'messaging:inbox' %}">Ver recibidos</a></p>
+<p><a href="{% url 'messaging:compose' %}">Escribir mensaje</a></p>
+
+{% if messages %}
+    {% for message in messages %}
+        <article>
+            <p><strong>Para:</strong> {{ message.receiver.username }}</p>
+            <p><strong>Asunto:</strong> {{ message.subject }}</p>
+            <p><strong>Fecha:</strong> {{ message.sent_at }}</p>
+            <a href="{% url 'messaging:detail' message.pk %}">Ver mensaje</a>
+        </article>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No enviaste mensajes aún.</p>
+{% endif %}
+{% endblock %}

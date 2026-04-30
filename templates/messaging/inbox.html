@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Inbox{% endblock %}
+
+{% block content %}
+<h1>Mensajes recibidos</h1>
+
+<p><a href="{% url 'messaging:compose' %}">Escribir mensaje</a></p>
+<p><a href="{% url 'messaging:sent' %}">Ver enviados</a></p>
+
+{% if messages %}
+    {% for message in messages %}
+        <article>
+            <p><strong>De:</strong> {{ message.sender.username }}</p>
+            <p><strong>Asunto:</strong> {{ message.subject }}</p>
+            <p><strong>Fecha:</strong> {{ message.sent_at }}</p>
+
+            {% if not message.is_read %}
+                <p><strong>No leído</strong></p>
+            {% endif %}
+
+            <a href="{% url 'messaging:detail' message.pk %}">Leer mensaje</a>
+        </article>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No tenés mensajes recibidos.</p>
+{% endif %}
+{% endblock %}
