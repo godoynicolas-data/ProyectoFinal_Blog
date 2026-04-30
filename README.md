@@ -73,3 +73,4 @@ La web cuenta con administración, registro de usuarios, login, logout, perfiles
 ```bash
 git clone https://github.com/godoynicolas-data/ProyectoFinal_Blog.git
 
+link al video https://drive.google.com/file/d/1VL0sMs3ZC5ESpnR-K8bIUUWvLzUJh07F/view?usp=drive_link
