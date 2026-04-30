@@ -17,4 +17,11 @@
     {{ page.content|safe }}
 </div>
 
+{% if request.user == page.author %}
+    <p>
+        <a href="{% url 'pages:page_update' page.pk %}">Editar</a>
+        |
+        <a href="{% url 'pages:page_delete' page.pk %}">Borrar</a>
+    </p>
+{% endif %}
 {% endblock %}

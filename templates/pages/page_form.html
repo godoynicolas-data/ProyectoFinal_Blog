@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if object %}Editar página{% else %}Crear página{% endif %}{% endblock %}
+
+{% block content %}
+<h1>{% if object %}Editar página{% else %}Crear página{% endif %}</h1>
+
+{{ form.media }}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

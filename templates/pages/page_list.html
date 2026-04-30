@@ -5,6 +5,10 @@
 {% block content %}
 <h1>Páginas</h1>
 
+{% if request.user.is_authenticated %}
+    <p><a href="{% url 'pages:page_create' %}">Crear nueva página</a></p>
+{% endif %}
+
 {% if pages %}
     {% for page in pages %}
         <article>
@@ -24,5 +28,4 @@
 {% else %}
     <p>No hay páginas aún.</p>
 {% endif %}
-
 {% endblock %}
